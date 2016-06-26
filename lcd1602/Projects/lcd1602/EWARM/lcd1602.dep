@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>709909811</fileChecksum>
+  <configuration>
+    <name>STM32L-Discovery</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\misc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\LCD1602.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_exti.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_flash.c</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\stm32l_discovery_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rcc.c</file>
+      <file>$PROJ_DIR$\..\src\icc_measure.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_timebase.c</file>
+      <file>$PROJ_DIR$\..\src\stm32l1xx_it.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_services.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32l15x_tsl_ct_acquisition.c</file>
+      <file>$PROJ_DIR$\..\src\main.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_singlechannelkey.c</file>
+      <file>$PROJ_DIR$\..\src\system_stm32l1xx.c</file>
+      <file>$PROJ_DIR$\..\src\discover_functions.c</file>
+      <file>$PROJ_DIR$\..\src\icc_measure_Ram.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_syscfg.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rtc.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_multichannelkey.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_api.c</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\startup\iar\startup_stm32l1xx_md.s</file>
+      <file>$PROJ_DIR$\..\..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_syscfg.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\lcd1602.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_exti.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_gpio.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\core_cm3.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\LCD1602.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Exe\STM32L-Discovery.out</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\misc.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dbgmcu.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_multichannelkey.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\LCD1602.pbi</file>
+      <file>$PROJ_DIR$\..\inc\stm32l1xx_conf.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_timebase.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_crc.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_syscfg.o</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dac.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm3.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_dma.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\LCD1602.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\system_stm32l1xx.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\stm32l1xx.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_rtc.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_lcd.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l15x_tsl_ct_acquisition.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_it.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_timebase.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_gpio.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l15x_tsl_ct_acquisition.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_exti.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\misc.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_api.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_rtc.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_adc.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_flash.o</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\misc.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\icc_measure_Ram.o</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_pwr.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_pwr.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\icc_measure_Ram.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rtc.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_lcd.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_comp.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_gpio.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_flash.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\system_stm32l1xx.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_flash.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_i2c.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_spi.h</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_iwdg.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_adc.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\startup_stm32l1xx_md.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\icc_measure.o</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_tim.h</file>
+      <file>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\discover_board.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l_discovery_lcd.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Exe\lcd1602.hex</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_usart.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_syscfg.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_exti.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l_discovery_lcd.o</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_rcc.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_singlechannelkey.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_multichannelkey.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_lcd.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_singlechannelkey.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_rcc.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\system_stm32l1xx.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_services.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\main.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_api.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\libraries\STM32L1xx_StdPeriph_Driver\inc\stm32l1xx_wwdg.h</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32_tsl_services.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\discover_functions.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_pwr.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\icc_measure.pbi</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_rcc.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\discover_functions.o</file>
+      <file>$PROJ_DIR$\STM32L-Discovery\Obj\stm32l1xx_it.o</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\misc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 76 54 45 68 63 65 33 64 69 70 59 46 41 47 48 53 39 51 42 83 44 36 50 29 85 84 26 88 90 82 78 103 81 89 95 99 113</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\LCD1602.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52 96 54 45 68 63 65 33 64 69 70 59 46 41 47 48 53 39 51 42 83 44 36 50 29 85 84 26 88 90 82 78 103 81 89 95 99 113 76 49 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_exti.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29 54 45 68 63 65 33 64 69 70 59 46 41 47 48 53 39 51 42 83 44 36 50 85 84 26 88 90 82 78 103 81 89 95 99 113 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_flash.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Utilities\STM32L-DISCOVERY\stm32l_discovery_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 102</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51 54 45 68 63 65 33 64 69 70 59 46 41 47 48 53 39 42 83 44 36 50 29 85 84 26 88 90 82 78 103 81 89 95 99 113 76</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 106</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rcc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 108</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\icc_measure.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 117</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_timebase.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\stm32l1xx_it.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 120</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_services.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 114</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32l15x_tsl_ct_acquisition.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 66</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_singlechannelkey.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\system_stm32l1xx.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 109</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\discover_functions.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 119</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 115</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\src\icc_measure_Ram.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_syscfg.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 100</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_rtc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_multichannelkey.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 105</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\STM32_TouchSensing_Driver\src\stm32_tsl_api.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 112</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\startup\iar\startup_stm32l1xx_md.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68 63 65 33 64 69 70 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM32L-Discovery\Exe\STM32L-Discovery.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 98</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+</project>
+
+

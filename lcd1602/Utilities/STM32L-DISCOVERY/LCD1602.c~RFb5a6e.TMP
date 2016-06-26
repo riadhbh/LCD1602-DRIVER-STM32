@@ -1,0 +1,298 @@
+/* Includes ------------------------------------------------------------------*/  
+  
+#include "LCD1602.h"  
+#include "discover_board.h" 
+#include "stm32l1xx_rcc.h"
+#include "core_cm3.h"
+#define LCD1602_GPIO_PORT   GPIOB
+#define LCD1602_RS_PIN      GPIO_Pin_5  //P2^6; 
+#define LCD1602_RW_PIN      GPIO_Pin_6  //P2^5;   
+#define LCD1602_EN_PIN      GPIO_Pin_7  //P2^7;  
+  
+#define LCD1602_DATA_PIN    GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15; 
+  
+//#define LCD1602_GPIO_CLK  RCC_APBPeriph_GPIOB  
+#define LCD1602_GPIO_CLK RCC_AHBPeriph_GPIOB  
+  
+#define LCD1602_GPIOC_PORT2   GPIOC
+#define LCD1602_VDD GPIO_Pin_12 //PC12
+#define LCD1602_GPIOC_CLK2 RCC_AHBPeriph_GPIOC
+
+#define RS_CLR GPIO_LOW(LCD1602_GPIO_PORT, LCD1602_RS_PIN)  
+#define RS_SET GPIO_HIGH(LCD1602_GPIO_PORT, LCD1602_RS_PIN)  
+  
+#define RW_CLR GPIO_LOW(LCD1602_GPIO_PORT, LCD1602_RW_PIN)  
+#define RW_SET GPIO_HIGH(LCD1602_GPIO_PORT, LCD1602_RW_PIN)  
+  
+#define EN_CLR GPIO_LOW(LCD1602_GPIO_PORT, LCD1602_EN_PIN)  
+#define EN_SET GPIO_HIGH(LCD1602_GPIO_PORT, LCD1602_EN_PIN)  
+  
+#define LCD1602_DATA_READ  ((GPIO_ReadInputData(LCD1602_GPIO_PORT) & 0xFF00)>>8)  
+#define LCD1602_DATA_WRITE(data)  LCD1602_GPIO_PORT->BSRRL = ( data << 8 ); LCD1602_GPIO_PORT->BSRRH = ( ( 0xFF & (~data) ) << 8 );  
+//#define LCD1602_DATA_WRITE(data) (LCD1602_GPIO_PORT->BSRR = (data<<8)); (LCD1602_GPIO_PORT->BRR = ((~data)<<8));  
+  
+/** 
+  * @brief  Configures LED GPIO. 
+  * @param  Led: Specifies the Led to be configured.  
+  *   This parameter can be one of following parameters: 
+  *     @arg LED1 
+  *     @arg LED2 
+  *     @arg LED3 
+  *     @arg LED4 
+  * @retval None 
+  */  
+unsigned int currcharx=0,currchary=0,currstringx=0,currstringy=0;
+//extern unsigned char currchar;
+//extern unsigned char* currstring;
+unsigned char currchar='\0';
+unsigned char* currstring="\0";
+
+void delay(__IO uint32_t nCount)  
+{  
+  while(nCount--)  
+  {  
+  } 
+   
+}  
+
+void SZ_STM32_LCD1602Init(void)  
+{  
+  GPIO_InitTypeDef  GPIO_InitStructure;  
+  
+        /* 
+        RCC_AHBPeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE); 
+ 
+        GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15; 
+        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 
+        GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+        GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL; 
+        GPIO_Init(GPIOD, &GPIO_InitStructure); 
+        */  
+      
+  /* Enable the GPIO_LED Clock */  
+  RCC_AHBPeriphClockCmd(LCD1602_GPIO_CLK, ENABLE);  
+  
+  /* Configure the GPIO_LED pin */  
+  GPIO_InitStructure.GPIO_Pin   = LCD1602_RS_PIN | LCD1602_RW_PIN | LCD1602_EN_PIN;  
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;   
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;  
+    GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;  
+  
+  GPIO_Init(LCD1602_GPIO_PORT, &GPIO_InitStructure);  
+      
+  /* Configure the GPIO_LED pin */  
+  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;  
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;  
+    //GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+    //GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP; 
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;  
+  
+  GPIO_Init(LCD1602_GPIO_PORT, &GPIO_InitStructure);  
+  
+  
+  
+    RCC_AHBPeriphClockCmd(LCD1602_GPIOC_CLK2, ENABLE);  
+  
+  /* Configure the GPIO_LED pin */  
+  GPIO_InitStructure.GPIO_Pin   = LCD1602_VDD;  
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;   
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;  
+  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;  
+  
+  //GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+  //GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP; 
+  
+  GPIO_Init(LCD1602_GPIOC_PORT2, &GPIO_InitStructure); 
+  
+      
+    /* Test 
+    GPIO_HIGH(LCD1602_GPIO_PORT,LCD1602_EN_PIN); 
+    GPIO_LOW(LCD1602_GPIO_PORT,LCD1602_EN_PIN); 
+         
+    GPIO_HIGH(LCD1602_GPIO_PORT,LCD1602_RS_PIN); 
+    GPIO_LOW(LCD1602_GPIO_PORT,LCD1602_RS_PIN); 
+         
+    GPIO_HIGH(LCD1602_GPIO_PORT,LCD1602_RW_PIN); 
+    GPIO_LOW(LCD1602_GPIO_PORT,LCD1602_RW_PIN); 
+         
+    GPIO_InitStructure.GPIO_Pin = LCD1602_DATA_PIN; 
+    GPIO_HIGH(LCD1602_GPIO_PORT,  GPIO_InitStructure.GPIO_Pin); 
+    GPIO_LOW(LCD1602_GPIO_PORT,GPIO_InitStructure.GPIO_Pin);*/          
+}  
+  
+void _nop_(void)  
+{  
+    delay(2000);  
+}  
+/*------------------------------------------------------ 
+
+------------------------------------------------------*/  
+void DelayMs(unsigned char t)  
+{  
+    while(t--)  
+    {  
+        
+        delay(100000);  
+    }  
+}  
+  
+/*------------------------------------------------------ 
+                     
+------------------------------------------------------*/  
+unsigned char LCD1602_Check_Busy(void)   
+{   
+    LCD1602_DATA_WRITE(0xFF);  
+    
+    RS_CLR;   
+    RW_SET;   
+    EN_CLR;   
+    _nop_();   
+    EN_SET;  
+    return ((LCD1602_DATA_READ & 0x80));  
+}  
+  
+/*------------------------------------------------------ 
+                    
+------------------------------------------------------*/  
+void LCD1602_Write_Com(unsigned char com)   
+{    
+    //while(LCD1602_Check_Busy());   
+        _nop_();  
+    
+    RS_CLR;   
+    RW_CLR;   
+    EN_SET;   
+    LCD1602_DATA_WRITE(com);   
+    _nop_();   
+    EN_CLR;  
+}  
+  
+/*------------------------------------------------------ 
+                  
+------------------------------------------------------*/  
+void LCD1602_Write_Data(unsigned char Data)   
+{   
+    //while(LCD1602_Check_Busy());  
+        _nop_();  
+   
+    RS_SET;   
+    RW_CLR;   
+    EN_SET;   
+    LCD1602_DATA_WRITE(Data);   
+      _nop_();  
+    EN_CLR;  
+}  
+  
+/*------------------------------------------------------ 
+                
+------------------------------------------------------*/  
+void LCD1602_Clear(void)   
+{   
+    LCD1602_Write_Com(0x01);   
+    DelayMs(5);  
+}  
+  
+/*------------------------------------------------------ 
+                  
+------------------------------------------------------*/  
+void LCD1602_Write_String(unsigned char x,unsigned char y,unsigned char *s)   
+{       
+    if (y == 0)   
+    {       
+        LCD1602_Write_Com(0x80 + x);       
+    }  
+    else   
+    {        
+        LCD1602_Write_Com(0xC0 + x);      
+    }   
+  
+    while (*s)   
+    {       
+        LCD1602_Write_Data( *s);       
+        s ++;       
+    }  
+    unsigned int i;
+    for(i=0;i<strlength(s);i++){
+    currstring[i]=s[i];
+    }
+currstringx=x;
+currstringy=y;
+}  
+  
+/*------------------------------------------------------ 
+               
+------------------------------------------------------*/  
+void LCD1602_Write_Char(unsigned char x,unsigned char y,unsigned char Data)   
+{       
+    if (y == 0)   
+    {       
+        LCD1602_Write_Com(0x80 + x);       
+    }      
+    else   
+    {       
+        LCD1602_Write_Com(0xC0 + x);       
+    }  
+      
+    LCD1602_Write_Data( Data);    
+currchar=Data;
+currcharx=x;
+currchar=y;
+}  
+  
+/*------------------------------------------------------ 
+                   
+------------------------------------------------------*/  
+void LCD1602_Init(void)   
+{  
+    SZ_STM32_LCD1602Init();  
+      
+    LCD1602_Write_Com(0x38);  
+    DelayMs(5);   
+    LCD1602_Write_Com(0x38);   
+    DelayMs(5);   
+    LCD1602_Write_Com(0x38);   
+    DelayMs(5);   
+    LCD1602_Write_Com(0x38);    
+    LCD1602_Write_Com(0x08);    
+    LCD1602_Write_Com(0x01);     
+    LCD1602_Write_Com(0x06);     
+    DelayMs(5);   
+    LCD1602_Write_Com(0x0C);    
+}  
+unsigned int strlength(unsigned char* ch){
+unsigned int i=0;
+while((ch[i]!='\0') ){
+    i++;
+}
+return(i);
+}
+
+void LCD11602_blink(unsigned int blinknb,unsigned int blinkspeed){
+unsigned int i=0;
+
+for (i=0;i<1;i++){
+ 
+  LCD1602_Init();
+  _nop_();
+  //LCD1602_Clear();
+LCD1602_Write_Char(currcharx,currchary,currchar);
+LCD1602_Write_String(currstringx,currstringy,currstring); 
+//LCD1602_Init();
+LCD1602_Clear();
+DelayMs(blinkspeed);
+}
+
+}
+void LCD1602_ScrollSentence(unsigned char *s,unsigned int nbscroll,unsigned int scollspeed){
+unsigned char shiftab;
+int i=0;
+while(*s){
+shiftab[i]=*s;
+i++;s++;
+}
+}

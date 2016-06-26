@@ -1,0 +1,10 @@
+/* Includes ------------------------------------------------------------------*/  
+
+  
+void DelayMs(unsigned char t);  
+void SZ_STM32_LCD1602Init(void);  
+void LCD_Init(void);  
+void LCD_Clear(void);  
+void LCD_Write_String(unsigned char x,unsigned char y,unsigned char *s);  
+void LCD_Write_Char(unsigned char x,unsigned char y,unsigned char Data);  
+void delay(__IO uint32_t nCount) ; 
